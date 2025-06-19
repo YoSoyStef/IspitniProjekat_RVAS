@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Termin>
+
+<h2>Moje rezervacije</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Cena</th>
+            <th>Sport</th>
+            <th>Centar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DatumVreme.ToString("dd.MM.yyyy HH:mm")</td>
+                <td>@item.Cena</td>
+                <td>@item.Sport?.Naziv</td>
+                <td>@item.SportskiCentar?.Naziv</td>
+            </tr>
+        }
+    </tbody>
+</table>
